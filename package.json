@@ -1,0 +1,25 @@
+{
+  "name": "house-temps",
+  "version": "0.1.0",
+  "description": "Pull temps from hue sensors + push to thingspeak = pretty graphs",
+  "main": "main.js",
+  "dependencies": {
+    "dotenv": "6.0.0",
+    "fs": "0.0.1-security",
+    "request": "2.87.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/secopsbot/house-temps.git"
+  },
+  "author": "Matt Robey",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/secopsbot/house-temps/issues"
+  },
+  "homepage": "https://github.com/secopsbot/house-temps#readme"
+}

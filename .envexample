@@ -1,0 +1,6 @@
+hue_ip="192.168.1.99"
+hue_api_key="abcdefghijklmnopqrstuvwxyz1234567890"
+
+thingspeak_url="https://api.thingspeak.com/update"
+thingspeak_channelid="99999"
+thingspeak_key_write="ABCDEGHHIJKLM123"
