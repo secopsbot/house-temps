@@ -37,7 +37,7 @@ function get_sensors(bridge_ip,api_user){
   })
 }
 
-function update_graph(url,api_key,field1,field2,field3){
+function update_graph(url,api_key,field1,field2,field3,field4){
 
   var request = require('request');
 
@@ -52,7 +52,7 @@ function update_graph(url,api_key,field1,field2,field3){
       url: url ,
       method: 'GET',
       headers: headers,
-      qs: {'api_key': api_key, 'field1': field1, 'field2': field2, 'field3': field3}
+      qs: {'api_key': api_key, 'field1': field1, 'field2': field2, 'field3': field3, 'field4': field4}
   }
 
   return new Promise(function(resolve,reject){
@@ -76,7 +76,7 @@ function main() {
     console.log(err);
   }).then(function(result) {
     var jsonContent = JSON.parse(result);
-    var sensors = ['22','35','39']
+    var sensors = ['22','35','39','58']
 
     sensors.forEach(function(value){
       var sensor_name = jsonContent[value].name;
@@ -90,8 +90,10 @@ function main() {
     var floor_1 = temp_2.substr(0,2) + "." + temp_2.substr(2,4);
     var temp_3 = JSON.stringify(jsonContent['39'].state.temperature);
     var floor_0 = temp_3.substr(0,2) + "." + temp_3.substr(2,4);
+    var temp_4 = JSON.stringify(jsonContent['58'].state.temperature);
+    var floor_0_kitchen = temp_4.substr(0,2) + "." + temp_4.substr(2,4);
 
-    var updatePromise = update_graph(process.env.thingspeak_url,process.env.thingspeak_key_write,floor_0,floor_1,floor_2);
+    var updatePromise = update_graph(process.env.thingspeak_url,process.env.thingspeak_key_write,floor_0,floor_1,floor_2,floor_0_kitchen);
     updatePromise.then(function(result) {
       return result;
 
