@@ -1,5 +1,7 @@
 # House Temps
 
+Widgets - https://thingspeak.com/channels/557585
+
 *Warning:* Current code is specific for my hue sensors, need to change this to allow configuration via the `.env` file or autodiscover.
 
 Requires;
